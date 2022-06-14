@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/pouchdb@7.3.0/dist/pouchdb.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-content">
+      
+        <div class="editor-wrapper basic-padding">
+          <!-- Header Editor -->
+          <div class="text-editor-header">
+            
+            <!-- "Font Increase" Button -->
+            <button type="button" class="btn" data-element="fontBig">
+              <i class="fa fa-arrow-up"></i>
+            </button>
+            
+            <!-- "Font Decrease" Button -->
+            <button type="button" class="btn" data-element="fontSmall">
+              <i class="fa fa-arrow-down"></i>
+            </button>
+            
+            <!-- "Heading" Button -->
+            <button type="button" class="btn" data-element="intoHeader">
+              <i class="fa fa-header"></i>
+            </button>
+      
+            <!-- "Paragraph" Button -->
+            <button type="button" class="btn" data-element="intoParagraph">
+              <i class="fa fa-paragraph"></i>
+            </button>
+      
+            <!-- "Bold" Button -->
+            <button type="button" class="btn" data-element="bold">
+              <i class="fa fa-bold"></i>
+            </button>
+      
+            <!-- "Italic" Button -->
+            <button type="button" class="btn" data-element="italic">
+              <i class="fa fa-italic"></i>
+            </button>
+      
+            <!-- "Underline" Button -->
+            <button type="button" class="btn" data-element="underline">
+              <i class="fa fa-underline"></i>
+            </button>
+      
+            <!-- "UL" Button -->
+            <button type="button" class="btn" data-element="insertUnorderedList">
+              <i class="fa fa-list-ul"></i>
+            </button>
+      
+            <!-- "OL" Button -->
+            <button type="button" class="btn" data-element="insertOrderedList">
+              <i class="fa fa-list-ol"></i>
+            </button>
+      
+            <!-- "Link" Button -->
+            <button type="button" class="btn" data-element="createLink">
+              <i class="fa fa-link"></i>
+            </button>
+      
+            <!-- "Justify Left" Button -->
+            <button type="button" class="btn" data-element="justifyLeft">
+              <i class="fa fa-align-left"></i>
+            </button>
+      
+            <!-- "Justify Center" Button -->
+            <button type="button" class="btn" data-element="justifyCenter">
+              <i class="fa fa-align-center"></i>
+            </button>
+      
+            <!-- "Justify Right" Button -->
+            <button type="button" class="btn" data-element="justifyRight">
+              <i class="fa fa-align-right"></i>
+            </button>
+      
+            <!-- "Justify" Button -->
+            <button type="button" class="btn" data-element="justifyFull">
+              <i class="fa fa-align-justify"></i>
+            </button>
+      
+            <!-- "Image" Button -->
+            <button type="button" class="btn" data-element="insertImage">
+              <i class="fa fa-image"></i>
+            </button>
+      
+          </div>
+      
+          <!-- Content -->
+          <div id="subject" class="subject" contenteditable="true" placeholder="Subject.."></div>
+          <div id="content" class="content" contenteditable="true"></div>
+          
+          <button class='button' onclick="postContent()">Send</button>
+          <button class='button' onclick="addToDb()">Save</button>
+          <button class='button' onclick="showDb()">Reload Templates</button>
+          <ul id="saved"></ul>
+        </div>
+      </div>
+
+           
+      <!-- Scripts -->
+      <!-- Font Awesome Icons -->
+      <script src="https://use.fontawesome.com/a31a3f8384.js"></script>
+</body>
+</html>
+
+
+<table style="border: border-collapse"></table>
