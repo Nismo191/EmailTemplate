@@ -38,6 +38,7 @@ window.addEventListener('load', function () {
   });
 
   db = createDB()
+  remoteDb = createRemoteDB()
   showDb()
 })
 
@@ -63,7 +64,11 @@ function postContent(){
 
 function createDB(){
   var db = new PouchDB('email_templates');
-  console.log(db)
+  return db;
+}
+
+function createRemoteDB(){
+  var db = new PouchDB('http://admin:R0adch3f01@127.0.0.1:5984/email_templates');
   return db;
 }
 
@@ -125,6 +130,8 @@ function showDb(){
       ul.appendChild(createListItem(template.doc));
     })
   });
+
+  syncDb()
 }
 
 function createListItem(item){
@@ -135,4 +142,8 @@ function createListItem(item){
   li.innerHTML += "<button class='button' onclick='updateItem(\"" + item._id + "," + item._rev + "\")'>Update</button>";
   li.innerHTML += "<button class='button' onclick='loadItem(\"" + item._id + "," + item._rev + "\")'>Load</button>";
   return li;
+}
+
+function syncDb(){
+  db.sync(remoteDb)
 }
